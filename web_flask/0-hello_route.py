@@ -1,20 +1,27 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
+""" This module is a flask app that displys Hello HBNB when visited"""
 
-The application listens on 0.0.0.0, port 5000.
-Routes:
-    /: Displays 'Hello HBNB!'
-"""
 from flask import Flask
-
 app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def hello_hbnb():
-    """Displays 'Hello HBNB!'"""
-    return "Hello HBNB!"
+def hello():
+    """function displays Hello HBNB"""
+    return 'Hello HBNB!'
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    """ To Start a New Web Application """
+app = Flask(__name__)
+
+
+@app.route('/', strict_slashes=False)
+def hello_hbnb():
+    """ Prints a Message when / is called """
+    return 'Hello HBNB!'
+
+
+if __name__ == "__main__":
+    """ Main Function """
+    app.run(host='0.0.0.0', port=5000)
